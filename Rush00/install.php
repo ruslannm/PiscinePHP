@@ -14,12 +14,12 @@
 	file_put_contents($file, serialize($tab));
 	$tab = null;
 	for($i = 0; $i < 10; $i++)
-		$tab[] = array('id' => $i, 'name' => 'Товар'.$i, 'price' => 10);
+		$tab[] = array('id' => $i, 'name' => 'Товар'.$i, 'price' => 10, 'deleted'=>0);
 	$file = $path."/products";
 	file_put_contents($file, serialize($tab));
 	$tab = null;
 	for($i = 0; $i < 5; $i++)
-		$tab[] = array('id' => $i, 'name' => 'Категория'.$i);
+		$tab[] = array('id' => $i, 'name' => 'Категория'.$i, 'deleted'=>0);
 	$file = $path."/categorys";
 	file_put_contents($file, serialize($tab));
 	$tab = null;
@@ -32,8 +32,6 @@
 		}
 	$file = $path."/cat_prod";
 	file_put_contents($file, serialize($tab));
-	$file = $path."/orders_count";
-	file_put_contents($file, 1);
 	$tab = null;
 	$tab[] = array('id' => 1, 'user' => 'root', 'time'=>time(), 'price' => 10);
 	$file = $path."/orders";
@@ -41,6 +39,10 @@
 	$tab = null;
 	$tab[] = array('order_id' => 1, 'product_id' => 1, 'count' => 1 ,'price' => 10, 'total_price' => 10);
 	$file = $path."/order_items";
+	file_put_contents($file, serialize($tab));
+	$tab = null;
+	$tab[] = array('order_id' => 2, 'category_id' =>5, 'product_id' => 10);
+	$file = $path."/counter";
 	file_put_contents($file, serialize($tab));
 	header("Location: index.html");
 ?>
