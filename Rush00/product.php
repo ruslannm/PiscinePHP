@@ -1,17 +1,33 @@
+<?php
+    session_start();
+    if ($_POST['submit'] == 'Buy') {
+		setcookie('id_'. $_GET['id'], $_POST["count"]);
+		header("Location: basket.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>42Shop</title>
+    <title>Shop 42</title>
 </head>
 <body>
 <?php
-    	$tab = unserialize(file_get_contents('./db/products'));
+include_once ("top.php");
+?>
+<?php
+        $tab = unserialize(file_get_contents('./db/products'));
     	foreach ($tab as $key=>$value) {
             if ($value["id"] == $_GET['id'])
-                echo '<h>'.$value['name'].' цена '.$value['price'].' руб.</h>';
+                echo '<h1>'.$value['name'].' цена '.$value['price'].' руб.</h1>';
         }
-    	echo '<ul>';
+        ?>
+<form action='' method="POST">
+    Купить<input type="text" name="count" value="1" /> шт.
+    <input type="submit" name="submit" value="Buy" />
+</form>
+<?php
+    	echo '<h2>Категории продукта</h2><br /><ul>';
     	$tab = unserialize(file_get_contents('./db/categorys'));
     	$prod = unserialize(file_get_contents('./db/cat_prod'));
     	foreach ($prod as $key=>$value) {

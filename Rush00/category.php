@@ -1,10 +1,16 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>42Shop</title>
+    <title>Shop 42</title>
 </head>
 <body>
+<?php
+include_once ("top.php");
+?>
 <?php
     	$tab = unserialize(file_get_contents('./db/categorys'));
     	foreach ($tab as $key=>$value) {

@@ -24,10 +24,23 @@
 	file_put_contents($file, serialize($tab));
 	$tab = null;
 	for($i = 0; $i < 5; $i++)
-		for ($j = 0; $j < 10; $j++)
-			$tab[] = array('category_id' => $i, 'product_id' => $j);
+		for ($j = 0; $j < 10; $j++) {
+			if ($i % 2 && $j % 2)
+				$tab[] = array('category_id' => $i, 'product_id' => $j);
+			elseif ($i % 2 == 0 && $j % 2 == 0)
+				$tab[] = array('category_id' => $i, 'product_id' => $j);
+		}
 	$file = $path."/cat_prod";
 	file_put_contents($file, serialize($tab));
-
-	//	header("Location: index.html");
+	$file = $path."/orders_count";
+	file_put_contents($file, 1);
+	$tab = null;
+	$tab[] = array('id' => 1, 'user' => 'root', 'time'=>time(), 'price' => 10);
+	$file = $path."/orders";
+	file_put_contents($file, serialize($tab));
+	$tab = null;
+	$tab[] = array('order_id' => 1, 'product_id' => 1, 'count' => 1 ,'price' => 10, 'total_price' => 10);
+	$file = $path."/order_items";
+	file_put_contents($file, serialize($tab));
+	header("Location: index.html");
 ?>

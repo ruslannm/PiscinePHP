@@ -1,5 +1,5 @@
 <?php
-header("Location: index.html");
+header("Location: index.php");
 session_start();
 $_SESSION['loggued_on_user'] = "";
 ?>
