@@ -4,9 +4,12 @@
 <div align="right">
 	<a href="basket.php">Корзина</a><br/>
 	<?php
+
 	if($_SESSION['loggued_on_user']) {
 		echo '<a href="modif.html">Modif account</a><br/>';
 		echo '<a href="orders.php">Архив заказов</a><br/>';
+		if($_SESSION['loggued_on_user'] == 'root')
+			echo '<a href="admin.php">Администрирование</a><br/>';
 		echo '<form action="logout.php">';
 		echo '<input type="submit" name="submit" value="logout" />';
 		echo '</form>';

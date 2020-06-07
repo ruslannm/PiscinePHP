@@ -4,6 +4,10 @@
 		setcookie('id_'. $_GET['id'], $_POST["count"]);
 		header("Location: basket.php");
 	}
+    elseif ($_POST['remove'] == 'Remove') {
+	    setcookie('id_'. $_GET['id'], 0);
+	    header("Location: basket.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +28,14 @@ include_once ("top.php");
         ?>
 <form action='' method="POST">
     Купить<input type="text" name="count" value="1" /> шт.
-    <input type="submit" name="submit" value="Buy" />
+    <input type="submit" name="submit" value="Buy" /><br />
 </form>
 <?php
+if ($_COOKIE['id_'. $_GET['id']]){
+	echo '<form action = "" method = "POST" >';
+	echo 'В корзине '.$_COOKIE['id_'. $_GET['id']].'шт. Удалить из корзины? <input type = "submit" name = "remove" value = "Remove" />';
+echo '</form >';
+}
     	echo '<h2>Категории продукта</h2><br /><ul>';
     	$tab = unserialize(file_get_contents('./db/categorys'));
     	$prod = unserialize(file_get_contents('./db/cat_prod'));

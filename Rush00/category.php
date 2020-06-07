@@ -17,10 +17,25 @@ include_once ("top.php");
             if ($value["id"] == $_GET['id'])
                 echo '<h>'.$value['name'].'</h>';
         }
-    	echo '<ul>';
     	$tab = unserialize(file_get_contents('./db/products'));
     	$prod = unserialize(file_get_contents('./db/cat_prod'));
-    	foreach ($prod as $key=>$value) {
+        echo '<table>';
+        echo '<tr> <td>Продукт</td> <td>Цена</td> </tr>';
+        foreach ($prod as $key=>$value) {
+			if ($value["category_id"] == $_GET['id']) {
+				foreach ($tab as $key => $item) {
+					if ($value["product_id"] == $item['id'])
+						echo "<tr><td><a href='product.php?id=" . $item['id'] . "'>" . $item['name'] . '</a></td><td>' . $item['price'] . '</td> </tr>';
+				}
+			}
+		}
+echo '</table>';
+
+
+/*
+
+
+foreach ($prod as $key=>$value) {
     	    if ($value["category_id"] == $_GET['id']){
             	foreach ($tab as $key=>$item) {
             	    if ($value["product_id"] == $item['id']){
@@ -29,7 +44,7 @@ include_once ("top.php");
             	}
     	    }
     	}
-        echo '</ul>';
+*/
 ?>
 </body>
 </html>

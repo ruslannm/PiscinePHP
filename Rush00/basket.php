@@ -58,10 +58,11 @@ if ($_POST['submit'] == 'Order') {
 include_once ("top.php");
     if ($basket){
     echo '<table>  <caption>Состав корзины</caption>';
-    echo '<tr> <td>Продукт</td> <td>Количество</td> <td>Цена</td> <td>Сумма</td></tr>';
+    echo '<tr> <td>Продукт</td> <td>Количество</td> <td>Цена</td> <td>Сумма</td><td>Изменить</td></tr>';
     foreach ($basket as $item)
-       	echo "<tr><td><a href='product.php?id=".$item[0]."'>".$item[1].'</a></td><td>'.$item[2].'</td> <td>'.$item[3].'</td><td>'.$item[4].'</td></tr>';
-    echo '<tr><td></td> <td></td> <td>Всего:</td> <td>'.$basket_price.'</td> </tr>';
+       	echo "<tr><td><a href='product.php?id=".$item[0]."'>".$item[1].'</a></td><td>'.$item[2].'</td> <td>'.$item[3].'</td><td>'.$item[4].'</td>';
+    echo "<td><a href='product.php?id=".$item[0]."'>Изменить количество/удалить</a></td></tr>";
+    echo '<tr><td></td> <td></td> <td>Всего:</td> <td>'.$basket_price.'</td> <td></td></tr>';
     echo '</table>';
     if($_SESSION['loggued_on_user']) {
 	    echo '<form action="" method="POST">';

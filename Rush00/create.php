@@ -1,11 +1,11 @@
 <?php
-header("Location: index.html");
+header("Location: index.php");
 if ("OK" == $_POST["submit"] && $_POST["login"] && $_POST["passwd"])
 {
-    $path = "./private";
+    $path = "./db";
     if (!file_exists($path))
         mkdir($path);
-    $file = $path."/passwd";
+    $file = $path."/users";
     $tab = array();
     if (file_exists($file))
     {
