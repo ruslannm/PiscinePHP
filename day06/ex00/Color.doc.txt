@@ -1,0 +1,27 @@
+<- Color ----------------------------------------------------------------------
+The Color class handles RGB colors.
+
+An instance can be contructed from either a RGB value:
+new Color( array( 'rgb' => 12345 ) );
+
+Or from distinct red, green, blue constitutives:
+new Color( array( 'red' => 255, 'green' => 255, 'blue' => 255 ) );
+
+65535
+
+Red, green, blue constitutives and RGB values are converted to intergers.
+Negative value RGB is set as 0, value RGB more 65535 is set as 65535.
+Negative color constitutives are set as 0, value more 255 is set as 255.
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+Color   add( Color $rhs );
+Adds each color constitutive and returns a new Color instance.
+
+Color   sub( Color $rhs );
+Substracts each color constitutive and returns a new Color instance.
+
+Color   mult( Color $rhs );
+Multiplies each color constitutive and returns a new Color instance.
+---------------------------------------------------------------------- Color ->

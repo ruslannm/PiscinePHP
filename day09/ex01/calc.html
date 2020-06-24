@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <script>
+        window.onload = function() {
+            setInterval(function () {
+                alert('Please, use me...');
+            }, 30000)
+        };
+
+        function calculate(form) {
+            const left = document.getElementById('left').value;
+            const right = document.getElementById('right').value;
+            if (left.length == 0 || right.length == 0)
+            {
+                alert('Error :(');
+                return ;
+            }
+            const nb1 = Number(left);
+            const nb2 = Number(right);
+            if (Number.isInteger(nb1) && Number.isInteger(nb2) && nb1 >= 0 && nb2 >= 0) {
+                const operation = document.getElementById('operation').value;
+                switch (operation) {
+                    case '+':
+                        message = nb1 + nb2;
+                        break;
+                    case '-':
+                        message = nb1 - nb2;
+                        break;
+                    case '*':
+                        message = nb1 * nb2;
+                        break;
+                    case '/':
+                        if (nb2) {
+                            message = nb1 / nb2;
+                        }
+                        else {
+                            message = 'It’s over 9000!';
+                        }
+                        break;
+                    case '%':
+                        if (nb2) {
+                            message = nb1 % nb2;
+                        }
+                        else {
+                            message = 'It’s over 9000!';
+                        }
+                        break;
+                }
+                console.log(message);
+                alert(message);
+            }
+            else {
+                alert('Error :(');
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="calc" onsubmit='calculate(this)'>
+        <input id='left' type="text">
+        <select id='operation'>
+            <option value='+'>+</option>
+            <option value='-'>-</option>
+            <option value='*'>*</option>
+            <option value='/'>/</option>
+            <option value='%'>%</option>
+        </select>
+        <input id='right' type="text">
+        <input id='submit' type='submit' value='Try me!'>
+    </form>
+</body>
+</html>

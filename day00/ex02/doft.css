@@ -1,0 +1,176 @@
+body{
+    position: relative;
+    min-width: 1890px;
+    min-height: 910px;
+    background-color: #505050;
+}
+.top {
+    border: 10px;
+    border-style: solid;
+    border-color: #909090;
+    background-color: #909090;
+    box-shadow: 10px 10px 10px black;
+    width: 1400px;
+    height: 117px;
+    border-radius: 10px;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.small_icon {
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+.wrapper {
+    position: relative;
+    width: 1360px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.menu {
+    width: 120px;
+    height: 405px;
+    border: 10px;
+    border-style: solid;
+    border-color: #909090;
+    background-color: #909090;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    display: block;
+    float: left;
+}
+.icon {
+    height: 70px;
+    margin-top: 5px;
+}
+.content {
+    width: 1000px;
+    height: 562px;
+    border: 10px;
+    border-style: solid;
+    border-color: #909090;
+    background-color: #909090;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    display: block;
+    margin-left: 30px;
+    float: left;
+}
+.right {
+    width: 120px;
+    height: 405px;
+    border: 10px;
+    border-style: solid;
+    border-color: #909090;
+    color: black;
+    background-color: #909090;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    display: block;
+    float: left;
+    margin-left: 30px;
+}
+#day42 {
+    height: 110px;
+    float: left;
+}
+#loupe {
+    margin-left: 10px;
+    float: right;
+}
+#look {
+    height: 65px;
+    margin-top: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: red;
+    border-width: 5px;
+}
+#use {
+    height: 70px;
+    margin-top: 2px;
+}
+#cluster_image {
+    width: 1000px;
+    height: 562px;
+}
+#book {
+    width: 70px;
+    margin-top: 5px;
+}
+#towel {
+    width: 70px;
+    margin-top: 6px;
+}
+#brick {
+    margin-top: 1px;
+    height: 70px;
+    width: 120px;
+    background-image: url(resources/brick.jpg);
+    background-repeat: repeat;
+}
+.bottom {
+    width: 520px;
+    height: 170px;
+    border: 0px;
+    border-style: solid;
+    background-color: #88FF89;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    display: block;
+    margin-left: -75px;
+    margin-top: 506px;
+    z-index: 1;
+    position: absolute;
+    font-family: sans-serif;
+    letter-spacing: 0.65px;
+    font-size: 17px;
+    text-align: left;
+}
+.bottom p {
+    display: inline;
+}
+.bottom h2 {
+    display: inline;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+.bottom h3 {
+    font-family: sans-serif;
+    letter-spacing: 0.65px;
+    font-size: 17px;
+    text-align: left;
+    text-shadow: 5px 5px 5px red;
+    display: inline;
+    font-weight: normal;
+}
+
+.bottom input[type=text] {
+    width: 375px;
+    height: 14px;
+    margin-left: 13px;
+    margin-top: 3px;
+    border: 2px solid;
+    border-bottom-color: #EEEEEE;
+    border-right-color: #EEEEEE;
+    border-left-color: #999C9B;
+    border-top-color: #999C9B;
+}
+
+.bottom input[type=submit] {
+    width: 78px;
+    height: 22px;
+    margin-left: 4px;
+    border-radius: 1px;
+    text-align-all: center;
+    font-size: 13px;
+    letter-spacing: 0.25px;
+    background: linear-gradient(#FDFAFB, #E0E0E0);
+    border: solid #929292 1px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        setInterval(function() {alert('Please, use me...');}, 30000);
+        $('#button').click(function () {
+            let nb1 = -1;
+            let nb2 = -1;
+            if ($('#left').val() != ''){
+                nb1 = Number($('#left').val());
+            }
+            if ($('#right').val() != ''){
+                nb2 = Number($('#right').val());
+            }
+            if (Number.isInteger(nb1) && Number.isInteger(nb2) && nb1 >= 0 && nb2 >= 0) {
+                const operation = $('#operation').val();
+                switch (operation) {
+                    case '+':
+                        message = nb1 + nb2;
+                        break;
+                    case '-':
+                        message = nb1 - nb2;
+                        break;
+                    case '*':
+                        message = nb1 * nb2;
+                        break;
+                    case '/':
+                        if (nb2) {
+                            message = nb1 / nb2;
+                        }
+                        else {
+                            message = 'It’s over 9000!';
+                        }
+                        break;
+                    case '%':
+                        if (nb2) {
+                            message = nb1 % nb2;
+                        }
+                        else {
+                            message = 'It’s over 9000!';
+                        }
+                        break;
+                }
+                console.log(message);
+                alert(message);
+            }
+            else {
+                alert('Error :(');
+            }
+        })
+        })
+    </script>
+</head>
+<body>
+        <input id='left' type="text">
+        <select id='operation'>
+            <option value='+'>+</option>
+            <option value='-'>-</option>
+            <option value='*'>*</option>
+            <option value='/'>/</option>
+            <option value='%'>%</option>
+        </select>
+        <input id='right' type="text">
+        <button id='button'>Try me!</button>
+</body>
+</html>
